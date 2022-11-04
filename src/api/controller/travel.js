@@ -3,6 +3,7 @@ import  Joi from 'joi';
 
 // Insert one user
 export const insertTravel = async (request, response, next) => {
+	console.log(request.body);
 	const { error } =validateTravel(request.body);
 		if (error){
 			response.status(400).send({ message: error.details[0].message });
@@ -41,9 +42,6 @@ export const getAllTravels = async (request, response, next) => {
 
 const validateTravel= (data) => {
 	const schema = Joi.object({
-	passenger_name: Joi.string()
-        .label("Passenger Name") 
-        .required(),
     
 	passenger_email: Joi.string()
        .label("Passenger Email")
