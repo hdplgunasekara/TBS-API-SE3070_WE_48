@@ -12,6 +12,6 @@ export default function (app) {
 	// app.get("/sample/search/:search", controller.searchSamples); // search samples	
 
 	// Travel endpoints
-	app.post("/travel/", controller.insertTravel); // insert one sample
+	app.post("/travel/setsource/", controller.insertTravel); // insert one sample
 	app.get("/travel/:email", controller.getAllTravels); // insert one sample
 }
